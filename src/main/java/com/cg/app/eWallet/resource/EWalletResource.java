@@ -39,6 +39,7 @@ public class EWalletResource {
 	}
 
 	@GetMapping("/{profileId}")
+
 	public double getWalletBalance(@PathVariable Integer profileId) {
 		double currentBalance = service.getWalletBalance(profileId);
 		return currentBalance;
@@ -48,15 +49,16 @@ public class EWalletResource {
 	public void passMoney(@PathVariable Integer profileId, @RequestParam("currentBalance") double amount) {
 		service.passMoney(profileId, amount);
 	}
-	
+
 	@GetMapping("/statements")
-	public List<Statement> getStatements(){
+	public List<Statement> getStatements() {
 		return service.getStatements();
 	}
-	
+
 	@GetMapping("/statements/{profileId}")
 	public List<Statement> getStatementById(@PathVariable Integer profileId) {
+		System.out.println(profileId);
 		return service.getStatementById(profileId);
 	}
-	
+
 }

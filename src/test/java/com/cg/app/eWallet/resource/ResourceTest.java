@@ -64,11 +64,13 @@ public class ResourceTest {
 		ResponseEntity<String> responseEntity = testRestTemplate.postForEntity("/ewallet", ewallet, String.class);
 		assertEquals(responseEntity.getStatusCode(), (HttpStatus.NOT_FOUND));
 	}
-	/*
-	 * @Test public void testForAddMoney() { EWallet ewallet = new EWallet(10,
-	 * 121.0, null); ResponseEntity<String> responseEntity =
-	 * testRestTemplate.pu("/ewallet", ewallet, String.class); }
-	 */
-		
 	
+	/*
+	 * @Test public void testForAddMoney() {
+	 * testRestTemplate.put("/ewallets/1?currentBalance="+111, null);
+	 * ResponseEntity<EWallet> responseEntity
+	 * =testRestTemplate.getForEntity("/ewallets/1", EWallet.class);
+	 * assertEquals(responseEntity.getBody().getCurrentBalance(),500,0); }
+	 */
+
 }

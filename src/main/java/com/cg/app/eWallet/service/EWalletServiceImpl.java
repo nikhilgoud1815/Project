@@ -40,7 +40,7 @@ public class EWalletServiceImpl implements EWalletService {
 		statement.setOrderId(1);
 		statement.seteWallet(ewallet);
 		repostmt.save(statement);
-		double updatedBalance=ewallet.getCurrentBalance();
+		double updatedBalance = ewallet.getCurrentBalance();
 		return updatedBalance;
 	}
 
@@ -52,12 +52,12 @@ public class EWalletServiceImpl implements EWalletService {
 	@Override
 	public double getWalletBalance(Integer profileId) {
 		EWallet ewallet = repository.findById(profileId).get();
-		double balance=ewallet.getCurrentBalance();
+		double balance = ewallet.getCurrentBalance();
 		return balance;
 
 	}
 
-	@Override 
+	@Override
 	public double passMoney(Integer profileId, double amount) {
 		EWallet ewallet = repository.findById(profileId).get();
 		ewallet.setCurrentBalance(ewallet.getCurrentBalance() - amount);
@@ -71,7 +71,7 @@ public class EWalletServiceImpl implements EWalletService {
 		statement.setOrderId(1);
 		statement.seteWallet(ewallet);
 		repostmt.save(statement);
-		double updatedBalance=ewallet.getCurrentBalance();
+		double updatedBalance = ewallet.getCurrentBalance();
 		return updatedBalance;
 
 	}

@@ -22,6 +22,4 @@ public interface EWalletService {
 
 	List<Statement> getStatementById(Integer profileId);
 
-	
-
 }
